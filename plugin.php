@@ -45,7 +45,7 @@ Text Domain: randomizer
 Domain Path: /translations
 
 Plugin Name: XRandomizer
-Plugin URI: TODO
+Plugin URI: https://wordpress.org/plugins/xrandomizer/
 
 Description: Display content through a widget or shortcode
 
