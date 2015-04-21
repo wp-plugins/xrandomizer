@@ -11,7 +11,7 @@ Display user specified content in random or circular order, through a widget or 
 
 == Description ==
 
-XRandomizer displays content in random order. Content can be HTML or MarkDown markup, PHP or JS code, even some plain text.
+XRandomizer displays content in random order. Content can be HTML or MarkDown markup, PHP or JS code, even  plain text.
 
 Admin interface is as simple as possible and you'll get used to it in a couple of minutes.
 
