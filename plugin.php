@@ -21,42 +21,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.txt>.
  */
 
-/* -- WordPress® --------------------------------------------------------------------------------------------------------------------------
-
-Version: 150120
-Stable tag: 150120
-Tested up to: 4.1.1
-Requires at least: 3.5.1
-
-Requires at least Apache version: 2.1
-Tested up to Apache version: 2.4.7
-
-Requires at least PHP version: 5.3.1
-Tested up to PHP version: 5.5.12
-
-Copyright: © 2014 Panagiotis Vagenas <pan.vagenas@gmail.com>
-License: GNU General Public License V3 or later
-Contributors: pan.vagenas
-
-Author: Panagiotis Vagenas <pan.vagenas@gmail.com>
-Author URI: https://profiles.wordpress.org/panvagenas
-
-Text Domain: randomizer
-Domain Path: /translations
-
-Plugin Name: XRandomizer
-Plugin URI: TODO
-
-Description: Display content through a widget or shortcode
-
-Kudos: WebSharks™ http://www.websharks-inc.com
-
-Tags:   ad,ad rotators,ads,advert,advertise,advertisement,advertiser,advertising,advert manager,adverts,banner,
-		banner manager,commercial,content,custom ads,custom banners,custom rotating banners,export,image ads,
-		image widget,plugin,random,random banners,random rotating banners,rotate,rotating banners,rotator,sidebar,
-		widget,widget ads
-
--- end section for WordPress®. --------------------------------------------------------------------------------------------------------- */
 
 namespace randomizer {
 
