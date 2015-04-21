@@ -17,7 +17,7 @@ Admin interface is as simple as possible and you'll get used to it in a couple o
 
 **If you like this plugin please support the developers and/or rate it at WordPress.org**
 
-Features
+#### Features
 
 * Easy to Set Up
 * Easy to Manage
@@ -36,7 +36,7 @@ Features
 * Code Editor
 * Custom CSS Support
 
-Requirements
+#### Requirements:
 
 * WordPress version: 3.5.1+
 * Apache version: 2.1+
