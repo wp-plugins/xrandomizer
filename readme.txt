@@ -2,7 +2,7 @@
 Contributors: pan.vagenas
 Tags: ad,ad rotators,ads,advert,advertise,advertisement,advertiser,advertising,advert manager,adverts,banner,banner manager,commercial,content,custom ads,custom banners,custom rotating banners,export,image ads,image widget,plugin,random,random banners,random rotating banners,rotate,rotating banners,rotator,sidebar,widget,widget ads
 Requires at least: 4.0
-Tested up to: 4.1.1
+Tested up to: 4.2.1
 Stable tag: 150120
 License: GNU General Public License V3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
