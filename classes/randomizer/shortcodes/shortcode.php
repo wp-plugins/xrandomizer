@@ -51,5 +51,11 @@ namespace randomizer\shortcodes {
 
 			return $this;
 		}
+
+		public function getAttsValues( $sc ) {
+			$sc = ltrim( $sc, '[randomizer' );
+			$sc = rtrim( $sc, ']' );
+			return shortcode_parse_atts( $sc );
+		}
 	}
 }

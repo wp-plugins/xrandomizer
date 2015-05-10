@@ -30,6 +30,15 @@ namespace randomizer {
 			'markdown'   => 'Markdown',
 			'javascript' => 'Javascript',
 			'text'       => 'Text',
+			'banner'     => 'Banner'
+		);
+
+		public $elementCodeModes = array(
+			'html'       => 'HTML',
+			'php'        => 'PHP',
+			'markdown'   => 'Markdown',
+			'javascript' => 'Javascript',
+			'text'       => 'Text',
 		);
 
 		/**
@@ -68,10 +77,10 @@ namespace randomizer {
 						'randomPolicy'    => 'random',
 						'elements'        => array(
 							array(
-								'content'  => '',
+								'content'  => array('image' => '', 'link' => '', 'target' => 1),
 								'pined'    => false,
 								'disabled' => false,
-								'mode'     => 'html'
+								'mode'     => 'banner'
 							)
 						),
 						'numOfElmsToDspl' => 0
@@ -144,13 +153,18 @@ namespace randomizer {
 				}
 				$allEmpty = true;
 				foreach ( $set["elements"] as $k => $element ) {
-					$allEmpty &= empty( $element['content'] );
-					if ( empty( $element['content'] ) ) {
+					if ( empty( $element['content'] )
+						|| ($element['mode'] === 'banner' && empty($element['content']['image']))
+					) {
 						unset( $newOptions[ $key ]["elements"][ $k ] );
 					} else {
+						$allEmpty = false;
 						$newOptions[ $key ]["elements"][ $k ]['pined']    = isset( $newOptions[ $key ]["elements"][ $k ]['pined'] ) && (bool) $newOptions[ $key ]["elements"][ $k ]['pined'];
 						$newOptions[ $key ]["elements"][ $k ]['disabled'] = isset( $newOptions[ $key ]["elements"][ $k ]['disabled'] ) && (bool) $newOptions[ $key ]["elements"][ $k ]['disabled'];
 						$newOptions[ $key ]["elements"][ $k ]['mode']     = isset( $newOptions[ $key ]["elements"][ $k ]['mode'] ) && in_array( $newOptions[ $key ]["elements"][ $k ]['mode'], array_keys( $this->elementModes ) ) ? $newOptions[ $key ]["elements"][ $k ]['mode'] : 'html';
+						if($newOptions[ $key ]["elements"][ $k ]['mode'] === 'banner'){
+							$newOptions[ $key ]["elements"][ $k ]['content']['target'] = isset($newOptions[ $key ]["elements"][ $k ]['content']['target']) ? $newOptions[ $key ]["elements"][ $k ]['content']['target'] : 0;
+						}
 					}
 				}
 				if ( $allEmpty ) {

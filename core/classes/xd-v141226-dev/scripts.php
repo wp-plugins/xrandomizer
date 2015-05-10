@@ -338,6 +338,13 @@ namespace xd_v141226_dev
 					$data .= $this->©action->ajax_verifier_property_for_call('©edd_updater.®ajaxDeactivateLicense', $this::private_type).',';
 				}
 			}
+			// TODO Differentiate admin from front side
+			foreach ( get_class_methods( $this->©ajax ) as $k => $method ) {
+				if(strpos(strtolower($method), '®ajax') !== 0) continue;
+
+				$data .= $this->©action->ajax_verifier_property_for_call('©ajax.'.$method, (is_numeric(strpos(strtolower($method), 'public')) ? $this::public_type : $this::private_type)).',';
+			}
+
 			$data .= $this->build_verifiers_for_core_inline_data(); // Make this easy for class extenders.
 
 			$data = rtrim($data, ',').'};'; // Trim and close curly bracket.

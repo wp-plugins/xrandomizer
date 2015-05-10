@@ -76,11 +76,8 @@ namespace randomizer {
 		 */
 		protected function php( $element ) {
 			ob_start();
-			if ( is_numeric( strpos( $element['content'], '<?php' ) ) ) {
-				eval( '?>' . $element['content'] . '<?php' );
-			} else {
-				eval( $element['content'] );
-			}
+			$eval = '?>' . $element['content'] . '<?php ';
+			eval( $eval );
 
 			return ob_get_clean();
 		}
@@ -127,6 +124,29 @@ namespace randomizer {
 		 */
 		protected function markdown( $element ) {
 			return $this->©markdown->parse( $element['content'] );
+		}
+
+		/**
+		 * @param $element
+		 *
+		 * @return string
+		 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+		 * @since 150501
+		 */
+		protected function banner( $element ) {
+			$con = '';
+			if ( isset( $element['content']['link'] ) && ! empty( $element['content']['link'] ) ) {
+				$con = '<a href="' . $element['content']['link'] . '"';
+				if ( isset( $element['content']['target'] ) && $element['content']['target'] ) {
+					$con .= ' target="_blank"';
+				}
+				$con .= '>';
+			}
+			$con .= '<img src="' . $element['content']['image'] . '" style="max-width:100%;">';
+			if ( isset( $element['content']['link'] ) && ! empty( $element['content']['link'] ) ) {
+				$con .= '</a>';
+			}
+			return $con;
 		}
 
 		/**

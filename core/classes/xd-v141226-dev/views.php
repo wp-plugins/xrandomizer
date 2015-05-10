@@ -40,6 +40,7 @@ namespace xd_v141226_dev;
 				return $content;
 			}
 			echo $content;
+			return true;
 		}
 
 		/**

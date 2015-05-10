@@ -161,7 +161,7 @@ namespace xd_v141226_dev
 			   && in_array('rijndael-256', mcrypt_list_algorithms(), TRUE)
 			   && in_array('cbc', mcrypt_list_modes(), TRUE)
 			   && strlen($e = $this->©string->base64_url_safe_decode($base64))
-			   && preg_match('/^~r2\:(?P<iv>[a-zA-Z0-9]+)(?:\:(?P<md5>[a-zA-Z0-9]+))?\|(?P<e>.*?)$/s', $e, $iv_md5_e)
+			   && preg_match('/^~r2\:(?P<iv>[a-zA-Z0-9]+)(?:\:(?P<md5>[a-zA-Z0-9]+))?\|(?P<e>.*)$/s', $e, $iv_md5_e)
 			) // RIJNDAEL 256 decryption is possible (and this IS an RIJNDAEL 256 encrypted string)?
 			{
 				$key = (string)substr($this->key($key), 0, mcrypt_get_key_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CBC));
@@ -253,7 +253,7 @@ namespace xd_v141226_dev
 			$this->check_arg_types('string', 'string', func_get_args());
 
 			if(strlen($e = $this->©string->base64_url_safe_decode($base64))
-			   && preg_match('/^~xe(?:\:(?P<md5>[a-zA-Z0-9]+))?\|(?P<e>.*?)$/s', $e, $md5_e)
+			   && preg_match('/^~xe(?:\:(?P<md5>[a-zA-Z0-9]+))?\|(?P<e>.*)$/s', $e, $md5_e)
 			) // This IS an XOR encrypted string?
 			{
 				if(isset($md5_e['e'][0]) && (empty($md5_e['md5']) || $md5_e['md5'] === md5($md5_e['e'])))

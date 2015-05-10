@@ -23,16 +23,16 @@
 
 /* -- WordPress® --------------------------------------------------------------------------------------------------------------------------
 
-Version: 150120
-Stable tag: 150120
-Tested up to: 4.1.1
+Version: 150501
+Stable tag: 150501
+Tested up to: 4.2.2
 Requires at least: 3.5.1
 
 Requires at least Apache version: 2.1
 Tested up to Apache version: 2.4.7
 
-Requires at least PHP version: 5.3.1
-Tested up to PHP version: 5.5.12
+Requires at least PHP version: 5.4
+Tested up to PHP version: 5.5.9
 
 Copyright: © 2014 Panagiotis Vagenas <pan.vagenas@gmail.com>
 License: GNU General Public License V3 or later

@@ -62,6 +62,7 @@ namespace randomizer {
 		 * @return array An array of any additional menu page components.
 		 */
 		public function menu_page_components() {
+			wp_enqueue_media();
 			$scripts = array(
 				$this->instance->ns_with_dashes . '--menu-pages-ace'                => array(
 					'deps' => array( 'jquery' ),
@@ -73,15 +74,6 @@ namespace randomizer {
 					'url'  => $this->©url->to_plugin_dir_file( '/client-side/scripts/menu-pages/ace/ext-language_tools.js' ),
 					'ver'  => $this->instance->plugin_version_with_dashes,
 				),
-				$this->instance->ns_with_dashes . '--menu-pages-random-sets'        => array(
-					'deps' => array(
-						'jquery',
-						$this->instance->plugin_root_ns_with_dashes . '--stand-alone',
-						$this->instance->ns_with_dashes . '--menu-pages-ace'
-					),
-					'url'  => $this->©url->to_plugin_dir_file( '/client-side/scripts/menu-pages/random-sets.min.js' ),
-					'ver'  => $this->instance->plugin_version_with_dashes,
-				)
 			);
 
 			$this->register( $scripts );

@@ -48,6 +48,22 @@ namespace xd_v141226_dev
 		);
 
 		/**
+		 * Checks if a table exists in DB
+		 *
+		 * @param $tableName
+		 *
+		 * @return bool
+		 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+		 * @since TODO ${VERSION}
+		 */
+		public function tableExists( $tableName ) {
+			global $wpdb;
+			$res = $wpdb->query( "SHOW TABLES LIKE '$tableName'" );
+
+			return $res > 0;
+		}
+
+		/**
 		 * Prepares meta names/values.
 		 *
 		 * @param mixed $value Any mixed data value is fine.

@@ -258,7 +258,7 @@ namespace xd_v141226_dev
                 $page_title,
                 $menu_title,
                 $capability,
-                $this->instance->plugin_root_ns.'--'.$this->$menuPage->slug,
+                $this->instance->plugin_root_ns_stub_with_dashes.'--'.$this->$menuPage->slug,
                 array($this, $menuPage.'.display')
             );
         }

@@ -349,7 +349,7 @@ namespace xd_v141226_dev {
 
 		protected function setDefaults(){
 			foreach ( get_object_vars( $this ) as $k => $v ) {
-				if(property_exists(parent, $k) || $k == 'arguments' || $k == 'instance' || preg_match('/^_/', $k)) continue;
+				if(property_exists(get_parent_class($this), $k) || $k == 'arguments' || $k == 'instance' || preg_match('/^_/', $k)) continue;
 				$this->_defaults[$k] = $v;
 			}
 		}
@@ -573,6 +573,12 @@ namespace xd_v141226_dev {
 		public function offset($offset){
 			$this->query_check_arg_types('integer', func_get_args());
 			$this->offset = (int)$offset;
+			return $this;
+		}
+
+		public function limit( $limit = null ) {
+			$this->limit = $limit === null ? $limit : (int) $limit;
+
 			return $this;
 		}
 

@@ -11,6 +11,8 @@
 namespace randomizer\menu_pages {
 
 
+	use randomizer\menu_pages\panels\random_set;
+
 	if ( ! defined( 'WPINC' ) ) {
 		exit( 'Do NOT access this file directly: ' . basename( __FILE__ ) );
 	}
@@ -48,6 +50,37 @@ namespace randomizer\menu_pages {
 			}
 
 			$this->display_content_panels_in_order();
+		}
+
+		/**
+		 * @param int $setId
+		 *
+		 * @return random_set
+		 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+		 * @since 150501
+		 */
+		public function getRandomSetInstance($setId = null){
+			$setOptions = $this->getSetOptions($setId);
+			return $this->©menu_pages__panels__random_set( $this, $setId, $setOptions );
+		}
+
+		/**
+		 * @param int $setId
+		 *
+		 * @return array
+		 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+		 * @since 150501
+		 */
+		public function getSetOptions($setId = null){
+			if($setId !== null){
+				$sets = $this->©options->get( 'sets' );
+				if(isset($sets[$setId])){
+					return $sets[$setId];
+				}
+			}
+
+			$sets = $this->©options->get( 'sets', true );
+			return $sets[0];
 		}
 
 		/**

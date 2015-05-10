@@ -84,7 +84,7 @@ class menu_page extends \xd_v141226_dev\menu_pages\menu_page {
 	 *    so that custom sidebar panels can be displayed by this routine.
 	 */
 	public function display_sidebar_panels() {
-		$this->add_sidebar_panel( $this->©menu_pages__panels__donations( $this ) );
+		$this->add_sidebar_panel( $this->©menu_pages__panels__donations( $this ), true );
 
 		$this->display_sidebar_panels_in_order();
 	}

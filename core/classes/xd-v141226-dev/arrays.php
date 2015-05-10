@@ -1148,7 +1148,7 @@ namespace xd_v141226_dev
                     } else {
                         $ret[ $k ] = $temp;
                     }
-                } else if ( (string) $v != (string) $array2[ $k ] ) {
+                } else if (  $v !=  $array2[ $k ] ) {
                     $ret[ $k ] = $v;
                 }
             }

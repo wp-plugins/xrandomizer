@@ -118,8 +118,43 @@
     display: block
 }
 
-.xd-v141226-dev b, .xd-v141226-dev big, .xd-v141226-dev i, .xd-v141226-dev small, .xd-v141226-dev tt, .xd-v141226-dev abbr, .xd-v141226-dev acronym, .xd-v141226-dev cite, .xd-v141226-dev code, .xd-v141226-dev dfn, .xd-v141226-dev em, .xd-v141226-dev kbd, .xd-v141226-dev strong, .xd-v141226-dev samp, .xd-v141226-dev var, .xd-v141226-dev a, .xd-v141226-dev bdo, .xd-v141226-dev br, .xd-v141226-dev img, .xd-v141226-dev map, .xd-v141226-dev object, .xd-v141226-dev q, .xd-v141226-dev span, .xd-v141226-dev sub, .xd-v141226-dev sup, .xd-v141226-dev button, .xd-v141226-dev input, .xd-v141226-dev label, .xd-v141226-dev select, .xd-v141226-dev textarea {
-    display: inline
+.xd-v141226-dev b,
+.xd-v141226-dev big,
+.xd-v141226-dev i,
+.xd-v141226-dev small,
+.xd-v141226-dev tt,
+.xd-v141226-dev abbr,
+.xd-v141226-dev acronym,
+.xd-v141226-dev cite,
+.xd-v141226-dev code,
+.xd-v141226-dev dfn,
+.xd-v141226-dev em,
+.xd-v141226-dev kbd,
+.xd-v141226-dev strong,
+.xd-v141226-dev samp,
+.xd-v141226-dev var,
+.xd-v141226-dev a,
+.xd-v141226-dev bdo,
+.xd-v141226-dev br,
+.xd-v141226-dev img,
+.xd-v141226-dev map,
+.xd-v141226-dev object,
+.xd-v141226-dev q,
+.xd-v141226-dev span,
+.xd-v141226-dev sub,
+.xd-v141226-dev sup,
+.xd-v141226-dev button,
+/* This is moved to a new block because in chrome was inline input had a weird appearance
+.xd-v141226-dev input,
+*/
+.xd-v141226-dev label,
+.xd-v141226-dev select,
+.xd-v141226-dev textarea {
+    display: inline;
+}
+
+.xd-v141226-dev input{
+    display: inline-block;
 }
 
 .xd-v141226-dev pre, .xd-v141226-dev select {

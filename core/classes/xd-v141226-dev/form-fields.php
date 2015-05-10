@@ -574,10 +574,7 @@ namespace xd_v141226_dev
 					         '/>';
 				} else if($field['type'] === 'media')
 				{
-					// TODO Implement
-					$this->©style->enqueue('thickbox');
-					$this->©script->enqueue('thickbox');
-					$this->©script->enqueue('media-upload');
+					wp_enqueue_media();
 					$html .= '<div class="input-group input-media-wrapper">';
 				}
 
@@ -587,7 +584,7 @@ namespace xd_v141226_dev
 				         ' id="'.esc_attr($field['id_prefix'].$field['id']).'"'.
 				         ((in_array($field['type'], $this->button_types, TRUE)) ? '' : ' name="'.esc_attr($field['name_prefix'].$field['name'].(($field['type'] === 'file' && $field['multiple']) ? '[]' : '')).'"').
 				         (($field['type'] === 'hidden' || !in_array($field['type'], $this->form_control_input_types, TRUE))
-					         ? ''
+					         ? ' class="'.esc_attr($field['classes']).'"'
 					         : ($field['type'] === 'media'
 						         ? ' class="form-control media-input '.esc_attr($field['classes']).'"'
 						         : ' class="form-control'.esc_attr($field['classes']).'"')).

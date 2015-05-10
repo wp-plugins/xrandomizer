@@ -66,7 +66,7 @@ if(!class_exists('xd_v141226_dev')) // Core stub class (for this verison).
 		 *
 		 * @var string XDaRk Core site.
 		 */
-		public static $core_site = 'http://www.websharks-inc.com';
+		public static $core_site = 'http://xdark.eu';
 
 		/**
 		 * Local WordPress® development directory.

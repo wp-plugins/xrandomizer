@@ -148,6 +148,21 @@ namespace xd_v141226_dev
 		}
 
 		/**
+		 * Checks if a table exists in database.
+		 * @param string $tableName Name of the table LIKE formatted (eg '%users'). String is always escaped.
+		 *
+		 * @return bool
+		 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
+		 * @since 141226
+		 */
+		public function tableExists($tableName){
+			global $wpdb;
+			$q = $wpdb->prepare('SHOW TABLES LIKE %s', $tableName);
+			$wpdb->query( $q );
+			return $this->©db->num_rows > 0;
+		}
+
+		/**
 		 * Runs the plugin's SQL install/upgrade files.
 		 *
 		 * @param boolean $confirmation Defaults to FALSE. Set this to TRUE as a confirmation.
